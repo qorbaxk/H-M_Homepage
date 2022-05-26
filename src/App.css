@@ -7,8 +7,11 @@ font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, '
 .login-button{
   display: flex;
   justify-content: flex-end;
-  margin:20px;
+  margin-top:30px;
+  margin-right: 40px;
   text-align: center;
+  
+  
 }
 
 .login-button div{
@@ -40,6 +43,7 @@ font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, '
 .menu-area{
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 
 .search-area{

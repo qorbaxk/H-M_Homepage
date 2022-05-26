@@ -33,7 +33,7 @@ const Navbar = () => {
                 <div onClick={goToLogin}>로그인</div>
             </div>
             <div className='logo'>
-                <img onClick={goToHome} width={100} src='img/hnmlogo.png'/>
+                <img onClick={goToHome} width={65} src='img/hnmlogo.png'/>
             </div>
             <div className='menu-area'>
                 <ul className='menu-list'>
