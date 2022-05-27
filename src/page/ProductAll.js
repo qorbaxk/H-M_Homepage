@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
 import ProductCard from '../component/ProductCard';
 
-const ProductAll = () => {
+
+const ProductAll = ({authenticate, searchProduct}) => {
 
   const [productList,setProductList] = useState([]);
 
@@ -16,12 +17,20 @@ const ProductAll = () => {
     getProducts();
   },[])
 
+  
+
   return (
     <div>
       <Container>
         <Row>
-          {productList.map((item)=> (
-              <Col lg={3}><ProductCard item={item}/></Col>
+          {productList.filter((val)=>{
+            if(searchProduct == ""){
+              return val;
+            }else if(val.title.toLowerCase().includes(searchProduct.toLowerCase())){
+              return val;
+            }
+          }).map((item)=> (
+              <Col lg={3}><ProductCard item={item} authenticate={authenticate}/></Col>
           ))}
         </Row>
       </Container>

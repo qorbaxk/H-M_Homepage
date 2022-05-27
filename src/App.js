@@ -5,6 +5,7 @@ import Login from './page/Login';
 import ProductDetail from './page/ProductDetail';
 import Navbar from './component/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {useEffect, useState} from 'react';
 
 //1. 전체상품페이지, 로그인페이지, 상품상세페이지
 //1-1. 내비게이션바 만들기
@@ -16,13 +17,24 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //7. 상품을 검색할 수 있다
 
 function App() {
+
+  const[authenticate,setAuthenticate]=useState(false);
+  //값이 true면 로그인됨 false면 로그인 안됨
+  useEffect(()=>{
+    console.log("로그인됐니?",authenticate);
+  },[authenticate]);
+
+  const [searchProduct,setSearchProduct] = useState("");
+
+
   return (
     <div>
-      <Navbar/>
+      <Navbar authenticate={authenticate} setSearchProduct={setSearchProduct}/>
       <Routes>
-        <Route path='/' element={<ProductAll/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/product/:id' element={<ProductDetail/>}/>
+        <Route path='/' element={<ProductAll authenticate={authenticate}
+        searchProduct={searchProduct}/>}/>
+        <Route path='/login' element={<Login setAuthenticate={setAuthenticate}/>}/>
+        <Route path='/product/:id' element={<ProductDetail />}/>
 
       </Routes>
     </div>
