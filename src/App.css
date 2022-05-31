@@ -255,13 +255,14 @@ input.search {
   margin-right: 10px;
 }
 .m-search {
-  width: 180px;
+  width: 150px;
   border: none;
   background-color: #000000;
   color: white;
   border-bottom: 1px solid white;
   padding-left: 10px;
   font-size: 20px;
+  border-radius: 0;
 }
 
 .m-search:focus {
