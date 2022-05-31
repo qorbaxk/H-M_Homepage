@@ -1,167 +1,274 @@
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
 
-* { 
-font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+* {
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+    "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
+    "Malgun Gothic", sans-serif;
 }
 
-.login-button{
+.header-line {
   display: flex;
-  justify-content: flex-end;
-  margin-top:30px;
-  margin-right: 40px;
-  text-align: center;
-  
-  
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
 }
 
-.login-button div{
+.login-button {
+  display: flex;
+  text-align: center;
+}
+
+.login-button div {
   cursor: pointer;
 }
 
-.login-icon{
+.login-icon {
   font-size: 18px;
   margin-right: 10px;
 }
 
-.logo{
+.logo {
   display: flex;
   justify-content: center;
 }
 
-.logo img{
+.logo img {
   cursor: pointer;
 }
-.menu-list{
+.menu-list {
   display: flex;
   list-style-type: none;
 }
 
-.menu-list li{
+.menu-list li {
   padding: 10px;
 }
 
-.menu-area{
+.menu-area {
   display: flex;
   justify-content: center;
   margin-top: 10px;
 }
 
-.search-area{
+.search-area {
   display: flex;
   border: 0;
   border-bottom: 1px solid black;
- 
+
   height: 30px;
   position: absolute;
   right: 50px;
 }
-.search-icon{
+.search-icon {
   font-size: 18px;
   margin-right: 10px;
   align-items: center;
   margin: auto;
 }
-input.search{
+input.search {
   border: 0;
   margin-left: 10px;
   font-size: 15px;
   width: 120px;
 }
-.search:focus{
+.search:focus {
   outline: none;
 }
-.search-delete{
+.search-delete {
   border: 0;
   background-color: white;
   color: grey;
 }
 
-.card-area{
+.card-area {
   margin-bottom: 20px;
 }
 
-.card-area div{
+.card-area div {
   cursor: pointer;
 }
 
-.card-choice{
+.card-choice {
   font-size: 12px;
   color: rgb(100, 129, 100);
 }
 
-.card-new{
+.card-new {
   font-size: 12px;
 }
 
-.card-img{
+.card-img {
   transition: all 0.2s linear;
   cursor: pointer;
 }
 
-.card-img:hover{
+.card-img:hover {
   transform: scale(1.1);
 }
 
-.login-area{
+.login-area {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
 }
 
-.login-area *{
-  margin-top:4px;
+.login-area * {
+  margin-top: 4px;
   margin-bottom: 10px;
 }
-.login-area input{
+.login-area input {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
   border-radius: 0;
   border: 1px solid black;
 }
-.login-area input:focus{
+.login-area input:focus {
   outline: none;
 }
-.login-area button{
+.login-area button {
   background-color: #000000;
   color: white;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-.product-img{
+.product-img {
   display: flex;
   justify-content: flex-end;
   padding-bottom: 50px;
 }
 
-.product-img img{
+.product-img img {
   width: 360px;
-
 }
 
-.product-ex div{
+.product-ex div {
   margin-bottom: 20px;
   font-size: 20px;
 }
 
-#dropdown-basic{
+#dropdown-basic {
   background-color: white;
   border: 1px solid black;
-  color:black;
+  color: black;
   border-radius: 0px;
 }
 
-#dropdown-basic:focus{
+#dropdown-basic:focus {
   outline: none;
 }
 
-.product-add{
+.product-add {
   background-color: black;
   color: white;
   width: 300px;
   padding: 10px;
+}
+
+.bm-burger-button {
+  position: relative;
+  display: flex;
+  width: 30px;
+  height: 20px;
+}
+
+.bm-burger-bars {
+  background: #000000;
+}
+
+.bm-burger-bars-hover {
+  background: #e50010;
+}
+
+.bm-cross {
+  background: #ffffff;
+}
+
+.bm-menu-wrap {
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.bm-menu {
+  background: #000000;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+.side-menu {
+  color: #ffffff;
+  padding: 0.8em;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.side-menu:hover {
+  color: #f0636d;
+}
+
+.bm-item {
+  display: inline-block;
+}
+
+.bm-overlay {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+/*pc버전*/
+@media screen and (min-width: 1025px) {
+  .bm-burger-button {
+    display: none;
+  }
+}
+
+/*모바일버전*/
+@media screen and (max-width: 1025px) {
+  .menu-area {
+    display: none;
+  }
+  .logo {
+    margin-bottom: 20px;
+  }
+  .login-area {
+    width: 80%;
+  }
+  .product-add {
+    width: 100%;
+  }
+}
+
+.m-search-area {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.m-search-icon {
+  color: white;
+  margin-right: 10px;
+}
+.m-search {
+  width: 180px;
+  border: none;
+  background-color: #000000;
+  color: white;
+  border-bottom: 1px solid white;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.m-search:focus {
+  outline: none;
+}
+.m-search-delete {
+  border: none;
+  background-color: black;
+  color: white;
 }
