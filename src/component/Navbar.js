@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { slide as Menu } from "react-burger-menu";
 import { useDispatch, useSelector } from "react-redux";
-import authenticateReducer from "../redux/reducers/authenticateReducer";
+import { authenticateActions } from "../redux/reducers/authenticateReducer";
 
 const Navbar = ({ setSearchProduct }) => {
   const menuList = [
@@ -26,7 +26,8 @@ const Navbar = ({ setSearchProduct }) => {
 
   const goToLogin = () => {
     if (authenticate) {
-      dispatch({ type: "LOGOUT_SUCCESS", payload: { authenticate } });
+      // dispatch({ type: "LOGOUT_SUCCESS", payload: { authenticate } });
+      dispatch(authenticateActions.getLogout(authenticate));
       navigate("/");
       Swal.fire({
         title: "로그아웃",
