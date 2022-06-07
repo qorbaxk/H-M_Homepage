@@ -126,14 +126,20 @@ input.search {
   border-radius: 0;
   border: 1px solid black;
 }
-.login-area input:focus {
-  outline: none;
-}
+
 .login-area button {
   background-color: #000000;
+  border-color: #000000;
   color: white;
   padding-top: 10px;
   padding-bottom: 10px;
+  border-radius: 0;
+}
+
+.login-area button:hover {
+  background-color: #000000;
+  border-color: #000000;
+  color: white;
 }
 
 .product-img {
@@ -244,7 +250,7 @@ input.search {
     width: 100%;
   }
   .card-img:hover {
-    transform: scale(1.0);
+    transform: scale(1);
   }
 }
 

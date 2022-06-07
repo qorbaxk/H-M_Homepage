@@ -1,9 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const ProductCard = ({ item, authenticate }) => {
+const ProductCard = ({ item }) => {
   const navigate = useNavigate();
+  const authenticate = useSelector((state) => state.auth.authenticate);
 
   const goToDetail = () => {
     if (authenticate) {

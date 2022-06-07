@@ -2,21 +2,22 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Container, Row, Col, Dropdown } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { productAction } from "../redux/actions/productAction";
 
 const ProductDetail = () => {
   let { id } = useParams();
 
-  const [product, setProduct] = useState(null);
+  const dispatch = useDispatch();
+  const product = useSelector((state) => state.product.selectItem);
 
   const getProductDetail = async () => {
-    let url = `https://my-json-server.typicode.com/qorbaxk/H-M_Homepage/products/${id}`;
-    let response = await fetch(url);
-    let data = await response.json();
-    setProduct(data);
+    dispatch(productAction.getProductDetail(id));
   };
 
   useEffect(() => {
     getProductDetail();
+    console.log("제품", product);
   }, []);
 
   return (

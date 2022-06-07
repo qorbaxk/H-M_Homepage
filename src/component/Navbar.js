@@ -5,8 +5,10 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { slide as Menu } from "react-burger-menu";
+import { useDispatch, useSelector } from "react-redux";
+import authenticateReducer from "../redux/reducers/authenticateReducer";
 
-const Navbar = ({ authenticate, setSearchProduct, setAuthenticate }) => {
+const Navbar = ({ setSearchProduct }) => {
   const menuList = [
     "여성",
     "Divided",
@@ -17,11 +19,14 @@ const Navbar = ({ authenticate, setSearchProduct, setAuthenticate }) => {
     "지속가능성",
   ];
 
+  const authenticate = useSelector((state) => state.auth.authenticate);
+
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const goToLogin = () => {
     if (authenticate) {
-      setAuthenticate(false);
+      dispatch({ type: "LOGOUT_SUCCESS", payload: { authenticate } });
       navigate("/");
       Swal.fire({
         title: "로그아웃",
